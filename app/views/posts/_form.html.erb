@@ -1,0 +1,29 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div class="error-messages">
+      <h2><%= pluralize(post.errors.count, "error" %> prohibited this post from being saved:</h2>
+      <ul>
+        <li><%= error.full_message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :title, placeholder: "Title", class: "title-input" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_area :content, placeholder: "Write your post in Markdown", class: "content-input", rows: 20 %>
+  </div>
+
+  <div class="markdown-preview">
+    <h3>Preview</h3>
+    <div id="preview-content"></div>
+  </div>
+
+  <div class="actions">
+    <%=  form.submit "Save as Draft", name: "save_draft", class: "btn" %>
+    <%= form.submit "Publish", name: "publish", class: btn btn-primary %>
+  </div>
+<% end %> 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "dashboard/index"
   devise_for :users
   get "posts/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,4 +14,14 @@ Rails.application.routes.draw do
 
    # Defines the root path route ("/")
    root "products#index"
+end
+
+Rails.application.routes.draw do
+  get "dashboard/index"
+  devise_for :users
+  resources :posts
+
+  get `dashboard`, to: `dashboard#index`
+
+  root "posts#index"
 end
