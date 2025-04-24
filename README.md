@@ -1,5 +1,5 @@
 # README
-Reworking my blog website for fun 
+Reworking my blog website for fun trying to decide to continue in ruby or pick up elixir maybe elm 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
